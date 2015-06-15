@@ -1,2 +1,2 @@
-# White
+# White Canvas
 WordPress Theme
