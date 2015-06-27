@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Richard's BLOG</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/bootstrap/css/bootstrap.min.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/bootstrap/css/bootstrap-theme.min.css" type="text/css" media="screen"/>
 <script src="<?php bloginfo('template_url'); ?>/jquery/jquery-1.11.1.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/bootstrap.min.js"></script>
 </head>
@@ -10,35 +12,33 @@
 <div id="wrapper" class="container">
 <header class="row">
 	<div class="col-md-8 col-md-offset-2">
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-			<a class="navbar-brand" href="">Brand</a>
+	<nav class="navbar">
+	<div class="navbar-header">		
+			<a class="navbar-brand" href="">Richard</a>
 	</div>
-	<nav class="collapse navbar-collapse bs-navbar-collapse" id="bs-example-navbar-collapse-2">
+	<div class="collapse navbar-collapse">
 				
 		<ul class="nav navbar-nav">
-			<li>HI</li>
+			<li><a href="#">Trival</a></li>
 		</ul>
 	    <form class="navbar-form navbar-right" role="search" action="">
 		<div class="form-group">
 		  <input type="text" class="form-control" placeholder="Search" id="keyword" name="keyword" value="">
 		</div>
 		
-		<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+		<button type="submit" class="btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 	    </form>
+	</div>
 	</nav>
 	</div>
 </header>
 
 <div id="content" class="row">
 	<div class="col-md-2">
+
 	</div>
 	<div class="col-md-8">
+	<div class="container-fluid">
 	<!-- Blog Post -->
 		 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<div class="post">
@@ -71,13 +71,19 @@
 		<?php else : ?>
 			输出找不到文章提示
 		<?php endif; ?>
+		</div>
 	</div>
 	<div class="col-md-2">
+
 	</div>
 </div>
 
 <footer class="row">
-<div class="col-md-8 col-md-offset-2">水平居中很简单，垂直居中就很困难，网上方法很多，不过都存在这样那样的兼容性问题，要么就要引入一些其他元素。考虑到后期图片自动缩放，外容器浮动等等因素，然后只利用代码，不引入其他元素。于是我在网上思路的基础上，自己写了下面的方法。</div>
+	<div class="col-md-8 col-md-offset-2">
+		<div class="container-fluid">
+		水平居中很简单，垂直居中就很困难，网上方法很多，不过都存在这样那样的兼容性问题，要么就要引入一些其他元素。考虑到后期图片自动缩放，外容器浮动等等因素，然后只利用代码，不引入其他元素。于是我在网上思路的基础上，自己写了下面的方法。
+		</div>
+	</div>
 </footer>
 <body>
 </html>
