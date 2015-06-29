@@ -8,18 +8,19 @@
 <script src="<?php bloginfo('template_url'); ?>/jquery/jquery-1.11.1.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/bootstrap.min.js"></script>
 </head>
+<?php flush(); ?>
 <body>
 <div id="wrapper" class="container">
 <header class="row">
 	<div class="col-md-8 col-md-offset-2">
 	<nav class="navbar">
 	<div class="navbar-header">		
-			<a class="navbar-brand" href="">Richard</a>
+			<a class="navbar-brand" title="<?php bloginfo('name'); ?>" href="<?php echo get_option('home'); ?>/">Richard</a>
 	</div>
 	<div class="collapse navbar-collapse">
 				
 		<ul class="nav navbar-nav">
-			<li><a href="#">Trival</a></li>
+			<?php wp_list_pages('depth=1&title_li=0&sort_column=menu_order'); ?>		
 		</ul>
 	    <form class="navbar-form navbar-right" role="search" action="">
 		<div class="form-group">
@@ -50,10 +51,10 @@
 			<div class="hr dotted clearfix">&nbsp;</div>
 			<!-- Post Image -->
 			
-			<img class="thumb" alt="" style="width:100%;"src="<?php bloginfo('template_url'); ?>/images/610x150.gif" />
+			<img class="thumb" alt="" style="width:100%;" src="<?php bloginfo('template_url'); ?>/images/610x150.gif" />
 			
 			<!-- Post Content -->
-			<?php the_excerpt(); ?>
+			<?php the_content(); ?>
 			<!-- Read More Button -->
 			<p class="clearfix"><a href="<?php the_permalink(); ?>" class="button right"> Read More...</a></p>
 		</div>
@@ -66,7 +67,6 @@
 			<p>没有找到任何文章！</p>
 			<?php endif; ?>
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		文章html骨架
 		<?php endwhile; ?>
 		<?php else : ?>
 			输出找不到文章提示
@@ -81,7 +81,12 @@
 <footer class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<div class="container-fluid">
-		水平居中很简单，垂直居中就很困难，网上方法很多，不过都存在这样那样的兼容性问题，要么就要引入一些其他元素。考虑到后期图片自动缩放，外容器浮动等等因素，然后只利用代码，不引入其他元素。于是我在网上思路的基础上，自己写了下面的方法。
+			 <span class="float">版权所有 &copy; 2010 <?php bloginfo('name'); ?>
+			&nbsp;&nbsp;|&nbsp;&nbsp;Powered By <a rel="external" title="WordPress主页" class="link" href="http://wordpress.org/">WordPress</a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;Design By Richard&nbsp;&nbsp;|&nbsp;&nbsp;
+			Code By Richard
+			</span>
+			</p>
 		</div>
 	</div>
 </footer>
