@@ -27,7 +27,7 @@
     <?php if ( !function_exists('dynamic_sidebar')
                             || !dynamic_sidebar('Third_sidebar') ) : ?>
         <h4>标签云</h4>
-        <p><?php wp_tag_cloud('smallest=8&largest=22'); ?></p>
+        <p><?php wp_tag_cloud('smallest=10&largest=15'); ?></p>
     <?php endif; ?>
        
     <?php if ( !function_exists('dynamic_sidebar')
